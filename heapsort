@@ -1,0 +1,57 @@
+#include<stdio.h>
+ int swap(int *a,int *b){
+ 	int temp=*a;
+ 	*a=*b;
+ 	*b=temp;
+ }
+ int heapify(int a[],int i,int n){
+ 	int left=2*(i)+1,max=i,right=2*i+2;
+ 	
+ 	
+ 	if(left<n && a[left]>a[i]) max=left;
+ 	if(right<n && a[right]>a[max]) max=right;
+ 	
+ 	if (max!=i){
+ 		swap(&a[max],&a[i]);
+ 		heapify(a,max,n);
+ 	}
+ 	
+ }
+ 	
+ 
+ int heapsort(int a[],int n){
+ 	int i;
+ 	for(i=n/2 - 1;i>=0;i--){
+ 		heapify(a,i,n);
+ 	}
+ 	for(i=n-1;i>0;i--)
+ 	{
+ 		swap(&a[i],&a[0]);
+ 		heapify(a,0,i);
+ 		
+ 	}
+ 	
+ }
+ int main(){
+ 	int i,n,a[100];
+ 	printf("enter the length of array \n");
+ 	scanf("%d",&n);
+ 	printf("\nenter the array\n");
+ 	for(i=0;i<n;i++){
+ 		scanf("%d",&a[i]);
+ 	}
+ 	
+ 	printf("\narray before heap sort");
+ 	for(i=0;i<n;i++){
+ 		printf("\t %d",a[i]);
+ 	}
+ 	
+ 	heapsort(a,n);
+ 	
+ 	printf("\narray after heap sort");
+ 	for(i=0;i<n;i++){
+ 		printf("\t %d",a[i]);
+ 	}
+ 	
+ 	
+ }
