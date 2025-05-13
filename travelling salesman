@@ -36,3 +36,16 @@ int main() {
     printf("Minimum cost for TSP: %d\n", min_cost);
     return 0;
 }
+OUTPUT:
+Enter the number of cities: 3
+Enter the distance matrix (0 means no path between cities):
+0
+12
+45
+7
+12
+3
+12
+3
+4
+The minimum cost to visit all cities and return to the starting point is: 27
