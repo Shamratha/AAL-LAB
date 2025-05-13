@@ -32,3 +32,16 @@ int main() {
     
     return 0;
 }
+OUTPUT:
+Enter length of elements:6
+Enter 6 elements:
+3
+78
+34
+68
+45
+23
+Original array:
+3 78 34 68 45 23 
+Sorted array:
+3 23 34 45 68 78 
